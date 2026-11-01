@@ -1,0 +1,46 @@
+/* Assignments page */
+.as {
+    display: flex;
+    flex-direction: column;
+    gap: 14px
+}
+
+.as .top2 {
+    display: flex;
+    gap: 14px;
+    align-items: center
+}
+
+.as .top2 .f {
+    flex: 1
+}
+
+.as .top2 small {
+    color: var(--mut)
+}
+
+.nd {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-top: 1px solid var(--bd);
+    padding-top: 14px
+}
+
+.due {
+    margin-left: auto;
+    background: #fee;
+    color: #e11d48;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+@media(max-width:640px) {
+    .nd {
+        flex-wrap: wrap
+    }
+}

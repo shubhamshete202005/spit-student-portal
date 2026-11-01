@@ -1,0 +1,26 @@
+/* Attendance page */
+.bar {
+    height: 8px;
+    border-radius: 8px;
+    background: var(--bd);
+    flex: 1;
+    overflow: hidden;
+    min-width: 70px
+}
+
+.bar i {
+    display: block;
+    height: 100%;
+    background: var(--c)
+}
+
+.pc {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.pc b {
+    color: var(--c);
+    min-width: 38px
+}

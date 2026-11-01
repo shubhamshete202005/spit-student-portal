@@ -1,0 +1,824 @@
+/* SPIT Student Portal – common styles: theme variables, layout (sidebar, top bar), shared components, responsive rules */
+:root {
+    --bg: #f4f7fd;
+    --card: #fff;
+    --tx: #0f1a3a;
+    --mut: #5d6b8a;
+    --bd: #e6ebf5;
+    --pri: #1a6cff;
+    --inp: #f1f5fc
+}
+
+[data-theme=dark] {
+    --bg: #0c1426;
+    --card: #141e36;
+    --tx: #e8eeff;
+    --mut: #9aa8c7;
+    --bd: #243050;
+    --inp: #1a2644
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--tx);
+    font-size: 14px
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer
+}
+
+svg.i {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex: none
+}
+
+svg.big {
+    width: 28px;
+    height: 28px
+}
+
+.b {
+    --c: #1a6cff
+}
+
+.g {
+    --c: #10a972
+}
+
+.p {
+    --c: #7c4dff
+}
+
+.o {
+    --c: #f59e0b
+}
+
+.r {
+    --c: #ef4444
+}
+
+.app {
+    display: flex;
+    min-height: 100vh
+}
+
+.side {
+    width: 240px;
+    background: linear-gradient(180deg, #0a1b44, #08122e);
+    color: #cfd9f5;
+    position: fixed;
+    inset: 0 auto 0 0;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 12px;
+    z-index: 40;
+    transition: transform .25s;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+.brand {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 4px 8px 24px;
+    color: #fff;
+    position: relative
+}
+
+.brand b {
+    font-size: 24px;
+    display: block;
+    line-height: 1
+}
+
+.brand small {
+    font-size: 13px;
+    opacity: .8
+}
+
+.nav {
+    position: relative
+}
+
+.nav a {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 15px
+}
+
+.nav a.on {
+    background: var(--pri);
+    color: #fff
+}
+
+.nav a:hover:not(.on) {
+    background: #ffffff14
+}
+
+.sart {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    height: 230px;
+    opacity: .18;
+    pointer-events: none
+}
+
+.sart svg {
+    width: 100%;
+    height: 100%
+}
+
+.sfoot {
+    margin-top: auto;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-align: center;
+    opacity: .75;
+    position: relative;
+    line-height: 1.7
+}
+
+.main {
+    margin-left: 240px;
+    flex: 1;
+    min-width: 0
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 28px;
+    background: var(--card);
+    border-bottom: 1px solid var(--bd);
+    position: sticky;
+    top: 0;
+    z-index: 30
+}
+
+.burger {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--tx)
+}
+
+.search {
+    flex: 1;
+    min-width: 0;
+    max-width: 520px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: var(--inp);
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    padding: 0 14px;
+    color: var(--mut)
+}
+
+.search input {
+    border: 0;
+    background: none;
+    outline: 0;
+    padding: 12px 0;
+    flex: 1;
+    color: var(--tx);
+    font: inherit;
+    min-width: 0
+}
+
+.bell {
+    position: relative;
+    margin-left: auto;
+    background: none;
+    border: 0;
+    color: var(--mut)
+}
+
+.bell u {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ef4444
+}
+
+.user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 14px;
+    border-left: 1px solid var(--bd)
+}
+
+.user small {
+    color: var(--mut);
+    display: block;
+    font-size: 12px
+}
+
+.user b {
+    font-weight: 600
+}
+
+.av {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a6cff, #7c4dff);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    overflow: hidden;
+    flex: none
+}
+
+.av img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+    top: 52px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+    padding: 6px;
+    min-width: 170px;
+    display: none;
+    box-shadow: 0 8px 24px #0002
+}
+
+.menu.show {
+    display: block
+}
+
+.menu a {
+    display: flex;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.menu a:hover {
+    background: var(--inp)
+}
+
+.pg {
+    padding: 24px 28px 40px
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -.5px
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: 700
+}
+
+.sub {
+    color: var(--mut);
+    margin: 6px 0 22px;
+    font-size: 16px
+}
+
+.hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap
+}
+
+.hd .sel {
+    display: flex;
+    gap: 12px
+}
+
+.bc {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--mut);
+    font-size: 13px;
+    margin-bottom: 10px
+}
+
+.bc svg {
+    width: 15px;
+    height: 15px
+}
+
+select {
+    padding: 12px 16px;
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--tx);
+    font: inherit
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 2px 10px #1a2b5c0a
+}
+
+.t {
+    background: color-mix(in srgb, var(--c) 7%, var(--card))
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px
+}
+
+.grid>* {
+    min-width: 0
+}
+
+.g3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.g5 {
+    grid-template-columns: repeat(5, 1fr)
+}
+
+.g4 {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.g2 {
+    grid-template-columns: 1.6fr 1fr
+}
+
+.g11 {
+    grid-template-columns: 1fr 1fr
+}
+
+.sc {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer
+}
+
+.sc .fl {
+    flex: 1
+}
+
+.sc small {
+    display: block;
+    color: var(--tx);
+    margin-bottom: 4px
+}
+
+.sc b {
+    font-size: 26px;
+    display: block
+}
+
+.sc span {
+    color: var(--mut);
+    font-size: 13px
+}
+
+.ib {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--c) 15%, var(--card));
+    color: var(--c);
+    flex: none
+}
+
+.go {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--c) 15%, var(--card));
+    color: var(--c);
+    flex: none
+}
+
+.go svg {
+    width: 16px;
+    height: 16px
+}
+
+.sc span.go {
+    color: var(--c)
+}
+
+.ch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px
+}
+
+.ch a {
+    color: var(--pri);
+    font-weight: 600;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer
+}
+
+.ch a svg {
+    width: 16px;
+    height: 16px
+}
+
+.row {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--bd)
+}
+
+.row:last-child {
+    border: 0
+}
+
+.row .f {
+    flex: 1;
+    min-width: 0
+}
+
+.row .f b {
+    display: block;
+    font-weight: 600
+}
+
+.row small {
+    color: var(--mut)
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    background: color-mix(in srgb, var(--c) 14%, var(--card));
+    color: var(--c);
+    white-space: nowrap
+}
+
+.ni {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--c) 14%, var(--card));
+    color: var(--c);
+    flex: none
+}
+
+.link {
+    cursor: pointer
+}
+
+.row.link:hover {
+    background: var(--inp)
+}
+
+.tw {
+    overflow-x: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px
+}
+
+th {
+    background: var(--inp);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 10px;
+    text-align: left
+}
+
+td {
+    padding: 11px 10px;
+    border-bottom: 1px solid var(--bd)
+}
+
+tr.s td,
+th.c,
+td.c {
+    text-align: center
+}
+
+.tabs {
+    display: flex;
+    gap: 6px;
+    padding: 5px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+    margin-bottom: 18px;
+    overflow-x: auto
+}
+
+.tabs button {
+    flex: 1;
+    border: 0;
+    background: var(--inp);
+    padding: 12px 16px;
+    border-radius: 9px;
+    color: var(--mut);
+    white-space: nowrap
+}
+
+.tabs button.on {
+    background: var(--pri);
+    color: #fff
+}
+
+.note {
+    display: flex;
+    gap: 14px;
+    background: color-mix(in srgb, #1a6cff 8%, var(--card));
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+    color: var(--mut);
+    line-height: 1.8
+}
+
+.note ul {
+    margin-left: 18px;
+    columns: 2
+}
+
+.ring {
+    --p: 78;
+    --c: #10a972;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: conic-gradient(var(--c) calc(var(--p)*1%), var(--bd) 0);
+    display: grid;
+    place-items: center;
+    flex: none
+}
+
+.ring span {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--card);
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center
+}
+
+.lg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0
+}
+
+.lg i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    padding: 13px;
+    border-radius: 10px;
+    border: 0;
+    background: color-mix(in srgb, #1a6cff 10%, var(--card));
+    color: var(--pri);
+    font-weight: 600;
+    width: 100%
+}
+
+.btn.pr {
+    background: var(--pri);
+    color: #fff
+}
+
+.btn.sm {
+    width: auto;
+    padding: 9px 16px;
+    display: inline-flex
+}
+
+.in {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    background: var(--inp);
+    color: var(--tx);
+    font: inherit
+}
+
+.md {
+    position: fixed;
+    inset: 0;
+    background: #000a;
+    display: none;
+    place-items: center;
+    z-index: 60;
+    padding: 16px
+}
+
+.md.show {
+    display: grid
+}
+
+.md>div {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 85vh;
+    overflow: auto
+}
+
+.toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, 80px);
+    background: #0f1a3a;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: .3s;
+    z-index: 70
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1
+}
+
+.empty {
+    text-align: center;
+    color: var(--mut);
+    padding: 40px 10px
+}
+
+@media(max-width:1100px) {
+    .g5 {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .g4 {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .g2,
+    .g11 {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:900px) {
+    .side {
+        transform: translateX(-100%)
+    }
+
+    .side.open {
+        transform: none
+    }
+
+    .main {
+        margin-left: 0
+    }
+
+    .burger {
+        display: block
+    }
+
+    .top {
+        padding: 12px 16px
+    }
+
+    .pg {
+        padding: 18px 16px 32px
+    }
+
+    .user div:not(.menu):not(.av) {
+        display: none
+    }
+}
+
+@media(max-width:640px) {
+
+    .g3,
+    .g4,
+    .g5,
+    .g11 {
+        grid-template-columns: 1fr
+    }
+
+    .g5 {
+        grid-template-columns: 1fr 1fr
+    }
+
+    h1 {
+        font-size: 26px
+    }
+
+    .note ul {
+        columns: 1
+    }
+}
+
+@media(max-width:480px) {
+    .card {
+        padding: 16px
+    }
+
+    .sc {
+        gap: 12px
+    }
+
+    .sc .ib {
+        width: 46px;
+        height: 46px
+    }
+
+    .sc b {
+        font-size: 22px
+    }
+
+    .hd .sel {
+        width: 100%
+    }
+
+    .hd .sel select {
+        flex: 1;
+        min-width: 0
+    }
+}

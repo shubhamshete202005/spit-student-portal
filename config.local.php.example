@@ -1,0 +1,10 @@
+<?php
+// Copy this file to config.local.php on your own computer and set local credentials.
+// Do NOT commit config.local.php to GitHub.
+declare(strict_types=1);
+
+define('DB_HOST', '127.0.0.1');
+define('DB_PORT', 3306);
+define('DB_USER', 'root');
+define('DB_PASS', 'PUT_YOUR_LOCAL_MYSQL_PASSWORD_HERE');
+define('DB_NAME', 'spit_portal');

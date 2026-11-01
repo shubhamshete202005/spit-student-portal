@@ -1,0 +1,27 @@
+/* Notices page */
+.chips {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 16px
+}
+
+.chips button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--bd);
+    background: color-mix(in srgb, var(--c) 7%, var(--card));
+    white-space: nowrap
+}
+
+.chips button.on {
+    border-color: var(--pri);
+    box-shadow: 0 0 0 3px #1a6cff30
+}
+
+.chips svg {
+    color: var(--c)
+}
