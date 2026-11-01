@@ -1,0 +1,17 @@
+# Local secrets
+/api/config.local.php
+.env
+.env.*
+!.env.example
+
+# Backups and temporary files
+*_backup*/
+*.bak
+*.log
+*.tmp
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--
+  MAIN TEMPLATE – common structure shared by every portal page
+  (dashboard, academics, attendance, assignments, exams-results, notices, settings).
+  To add a page: copy this file, set the <title>, and uncomment the two page lines.
+  Structure: main.js -> shell() injects the sidebar + top bar into #app and leaves <main id="v"> for the page's own JS.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPIT Student Portal</title>
+<link rel="stylesheet" href="css/main.css">
+<!-- <link rel="stylesheet" href="css/PAGE.css"> -->
+</head>
+<body>
+<div class="app" id="app"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<!-- <script src="js/PAGE.js"></script> -->
+</body>
+</html>
